@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "lib": ["esnext", "webworker"],
+    "jsx": "react",
+    "module": "commonjs",
+    "outDir": "./lib",
+    "strict": true,
+    "target": "esnext"
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
+}

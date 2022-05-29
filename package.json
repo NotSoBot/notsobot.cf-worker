@@ -1,0 +1,30 @@
+{
+  "author": "cakedan",
+  "description": "notsobot.com's cf worker",
+  "files": [
+    "lib/**/*"
+  ],
+  "license": "MPL-2.0",
+  "main": "lib/index.js",
+  "name": "notsobot.cf-worker",
+  "types": "lib/index.d.ts",
+  "version": "0.0.2",
+  "dependencies": {
+    "cf-worker-router": "^0.1.1",
+    "cloudflare-worker-webpack-plugin": "^2.0.3",
+    "react": "^16.10.0",
+    "react-dom": "^16.10.0",
+    "types-cloudflare-worker": "^1.0.1"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.3",
+    "@types/react-dom": "^16.9.1",
+    "typescript": "^3.6.3",
+    "webpack": "^4.41.0",
+    "webpack-cli": "^3.3.9"
+  },
+  "scripts": {
+    "build": "tsc",
+    "deploy": "npm run build && webpack --progress --hide-modules -p"
+  }
+}
