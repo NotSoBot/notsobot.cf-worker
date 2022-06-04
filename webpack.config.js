@@ -33,6 +33,7 @@ module.exports = {
       ],
       disabledPatterns: [
         'notsobot.com/api/*',
+        'beta.notsobot.com/api/*',
       ],
       scriptName: 'notsobot-com',
       verbose: true,
