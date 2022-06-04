@@ -79,14 +79,6 @@ router.get('/faq', (event) => {
   return renderHtml(event, metatags);
 });
 
-router.get('/foxbot', () => {
-  return new ApiRedirect('https://discordapp.com/users/66078337084162048');
-});
-
-router.get('/invite', () => {
-  return new ApiRedirect('/api/help/discord/bot');
-});
-
 router.get('/legal/privacy', (event) => {
   const metatags = Object.assign({}, DefaultMetatags) as MetatagsStore;
   metatags.description = `Something about privacy`;
@@ -109,10 +101,6 @@ router.get('/support', (event) => {
   const metatags = Object.assign({}, DefaultMetatags) as MetatagsStore;
   metatags.description = `Something about support`;
   return renderHtml(event, metatags);
-});
-
-router.get('/support/invite', () => {
-  return new ApiRedirect('/api/help/discord/server');
 });
 
 
