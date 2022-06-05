@@ -61,6 +61,12 @@ router.get('/auth/logout', (event) => {
   return renderHtml(event, metatags);
 });
 
+router.get('/auth/redirect', (event) => {
+  const metatags = Object.assign({}, DefaultMetatags) as MetatagsStore;
+  metatags.description = `Authentication Redirect`;
+  return renderHtml(event, metatags);
+});
+
 router.get('/commands', (event) => {
   const metatags = Object.assign({}, DefaultMetatags) as MetatagsStore;
   metatags.description = `So many commands here`;
