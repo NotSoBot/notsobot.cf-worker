@@ -85,15 +85,21 @@ router.get('/faq', (event) => {
   return renderHtml(event, metatags);
 });
 
-router.get('/legal/privacy', (event) => {
+router.get('/invite', (event) => {
   const metatags = Object.assign({}, DefaultMetatags) as MetatagsStore;
-  metatags.description = `Something about privacy`;
+  metatags.description = `NotSoBot\'s Discord Invite`;
   return renderHtml(event, metatags);
 });
 
-router.get('/legal/terms', (event) => {
+router.get('/legal/privacy', (event) => {
   const metatags = Object.assign({}, DefaultMetatags) as MetatagsStore;
-  metatags.description = `Something about our terms with some service`;
+  metatags.description = `Our Privacy Policy`;
+  return renderHtml(event, metatags);
+});
+
+router.get('/legal/tos', (event) => {
+  const metatags = Object.assign({}, DefaultMetatags) as MetatagsStore;
+  metatags.description = `Our Terms of Service`;
   return renderHtml(event, metatags);
 });
 
