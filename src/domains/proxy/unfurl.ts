@@ -56,8 +56,8 @@ export default (<RouteHandler> (async (event) => {
       for (let tag of tags) {
         let match = tag.match(Regexps.METATAG_PARSE);
         if (match) {
-          match = match.filter((value) => value);
-          metatags[match[1].toLowerCase()] = match[2];
+          const filtered = match.filter((value) => value);
+          metatags[filtered[1].toLowerCase()] = filtered[2];
         }
       }
     }
@@ -81,7 +81,7 @@ export default (<RouteHandler> (async (event) => {
     }
 
     return body;
-  } else if (ImageMimetypesGif.includes(mimetype)) {
+  } else if (ImageMimetypesGif.includes(mimetype as any)) {
     const imageUrl = String(url);
     return (<UnfurlBody> {
       image: {

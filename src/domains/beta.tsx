@@ -115,6 +115,12 @@ router.get('/support', (event) => {
   return renderHtml(event, metatags);
 });
 
+router.get('/support/invite', (event) => {
+  const metatags = Object.assign({}, DefaultMetatags) as MetatagsStore;
+  metatags.description = `NotSoBot\'s Discord Support Server Invite`;
+  return renderHtml(event, metatags);
+});
+
 
 router.route('/*', '*', (event) => {
   const metatags = Object.assign({}, DefaultMetatags) as MetatagsStore;
