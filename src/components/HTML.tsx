@@ -3,7 +3,12 @@ import * as React from 'react';
 import { MetatagNames } from '../constants';
 
 
-export class HTML extends React.PureComponent {
+
+export interface HTMLProps {
+  children: React.ReactNode,
+}
+
+export class HTML extends React.PureComponent<HTMLProps> {
   render() {
     // figure out someway to put '<!DOCTYPE html>' at the top of this
     return (
@@ -15,7 +20,7 @@ export class HTML extends React.PureComponent {
 }
 
 
-export interface HeadProps {
+export interface HeadProps extends HTMLProps {
   metatags: Array<MetatagProps>,
 }
 
@@ -32,7 +37,7 @@ export class Head extends React.PureComponent<HeadProps> {
   }
 }
 
-export class Body extends React.PureComponent {
+export class Body extends React.PureComponent<HTMLProps> {
   render() {
     return (
       <body>

@@ -1,6 +1,6 @@
+import './modules/messagechannel';
+
 import { FetchRouter, HttpMethods } from 'cf-worker-router';
-import { CloudflareWorkerGlobalScope } from 'types-cloudflare-worker';
-declare const self: CloudflareWorkerGlobalScope;
 
 import {
   alphaDomain,

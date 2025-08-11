@@ -1,6 +1,6 @@
 const path = require('path');
 
-const CloudflareWorkerPlugin = require('cloudflare-worker-webpack-plugin');
+const CloudflareWorkersPlugin = require('cloudflare-workers-webpack-plugin');
 const { DefinePlugin } = require('webpack');
 
 const {
@@ -25,7 +25,7 @@ module.exports = {
     path: path.join(__dirname, 'dist'),
   },
   plugins: [
-    new CloudflareWorkerPlugin(CLOUDFLARE_AUTH_EMAIL, CLOUDFLARE_AUTH_KEY, {
+    new CloudflareWorkersPlugin(CLOUDFLARE_AUTH_EMAIL, CLOUDFLARE_AUTH_KEY, {
       site: 'notsobot.com',
       enabledPatterns: [
         '*notsobot.com',

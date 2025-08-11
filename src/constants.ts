@@ -61,6 +61,9 @@ export const MetatagNames = Object.freeze({
 
 
 export const DISCORD_DOMAINS = Object.freeze([
+  'discord.com',
+  'www.discord.com',
+  'canary.discord.com',
   'canary.discordapp.com',
   'cdn.discordapp.com',
   'discord.gift',
@@ -77,4 +80,6 @@ export const TRUSTED_DOMAINS = Object.freeze([
   ...DISCORD_DOMAINS,
   'cdn.files.gg',
   'files.gg',
+  'cdn.nsb.gg',
+  'nsb.gg',
 ]);

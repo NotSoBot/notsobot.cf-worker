@@ -33,7 +33,7 @@ export async function fetchStorage(
   storage.pathname = options.pathname;
 
   const request = new Request(String(storage), event.request);
-  if (options.method && BodylessMethods.includes(options.method)) {
+  if (options.method && BodylessMethods.includes(options.method as any)) {
     options.body = null;
   }
 
