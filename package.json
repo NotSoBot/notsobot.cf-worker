@@ -1,31 +1,18 @@
 {
-  "author": "cakedan",
-  "description": "notsobot.com's cf worker",
-  "files": [
-    "lib/**/*"
-  ],
-  "license": "MPL-2.0",
-  "main": "lib/index.js",
   "name": "notsobot.cf-worker",
-  "types": "lib/index.d.ts",
-  "version": "0.0.3",
-  "dependencies": {
-    "aws4fetch": "^1.0.20",
-    "cf-worker-router": "^0.2.0",
-    "cloudflare-workers-webpack-plugin": "^3.0.1",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+  "description": "cdn.notsobot.com's cf worker",
+  "author": "cakedan",
+  "license": "MPL-2.0",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20250810.0",
-    "@types/react": "^19.1.9",
-    "@types/react-dom": "^19.1.7",
+    "@cloudflare/workers-types": "^5.20261013.1",
     "typescript": "^5.9.2",
-    "webpack": "^5.101.0",
-    "webpack-cli": "^6.0.1"
-  },
-  "scripts": {
-    "build": "tsc",
-    "deploy": "npm run build && webpack --progress"
+    "wrangler": "^4.149.0"
   }
 }

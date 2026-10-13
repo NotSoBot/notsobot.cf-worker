@@ -1,0 +1,17 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  // same script name as before, so it replaces the old webpack-deployed worker
+  "name": "notsobot-com",
+  "main": "src/index.ts",
+  "compatibility_date": "2025-09-01",
+  // only the cdn now. notsobot.com/www/beta are notsobot.com-frontend's worker and oasis (umami) has a worker-less
+  // route set in the dashboard (more specific routes win over the wildcard), the api (apex, not matched by `*.`) is the origin.
+  // the wildcard 404s every other subdomain, it needs a proxied `*` dns record to see names without their own record
+  "routes": [
+    {"pattern": "cdn.notsobot.com/*", "zone_name": "notsobot.com"},
+    {"pattern": "*.notsobot.com/*", "zone_name": "notsobot.com"}
+  ],
+  "vars": {
+    "STORAGE_URL": "https://notsobot.storage.googleapis.com"
+  }
+}
